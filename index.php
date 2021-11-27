@@ -20,7 +20,7 @@
         </div>
         <div >
             <ul id="cart">
-
+               
             </ul>
         </div>
     </div>
@@ -28,9 +28,15 @@
         <?php 
             include "./data.php";
             foreach($products as $i){
-                echo '<div class="produit"> <img src="'.$i["image"].'"><h2>'.$i["name"].' | '.$i["price"].' dh </h2> <img src="imgs/plus.png" id="'.$i["id"].'" class="icons" onclick="addProd()"></div>';
+                echo'<div class="produit"> 
+                        <img src="'.$i["image"].'">
+                        <h2>'.$i["name"].' | '.$i["price"].' dh </h2> 
+                        <img src="imgs/plus.png" id="'.$i["id"].'" class="icona">
+                    </div>';
             }
-            ?>
+            ?> <script>
+                    var data = <?php echo json_encode($products); ?>;
+                </script>
     </div>
     <footer> 
        <p> by BBOT Fatimezzahra</p>

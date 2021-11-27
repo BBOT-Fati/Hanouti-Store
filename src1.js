@@ -4,7 +4,6 @@ class produit {
             this.label = b,
             this.price = c,
             this.qnte = 0,
-            this.desc = d,
             this.image = e;
     }
 };
@@ -53,7 +52,7 @@ function deletefromCart(e) {
 }
 
 function addtoCart(e) {
-    let a=new produit();
+    let a;
     Object.assign(a,(data.find((i)=>i.id ==e.target.getAttribute("id"))));
     let b=cartitems.find((i)=>i.obj=a);
     a.qnte++;console.log("qnte :"+a)
