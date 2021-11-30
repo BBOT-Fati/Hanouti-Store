@@ -19,7 +19,9 @@ let cart =document.querySelector("#cart");
 let total=document.querySelector("#total");
 let search=document.querySelector("input");
 let btna=document.querySelectorAll(".icona");
+let divs=document.querySelectorAll(".produit");
 
+search.addEventListener("input",searchfun);
 btna.forEach(e => {
     e.addEventListener("click",addProd); 
 });
@@ -80,7 +82,14 @@ function delProd(e){
     total.innerHTML=t;
 }
 
-
 function searchfun(e){
-    
+    let input=e.target.value;
+    divs.forEach(e=>{
+        if(e.getAttribute("id").toLowerCase().indexOf(input)>-1){
+            e.style.display="";}
+            else{
+                e.style.display="none";
+            }
+        }
+    )
 }

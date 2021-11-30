@@ -18,17 +18,15 @@
             <p id="total">0</p>
             <p> MAD</p>
         </div>
-        <div >
-            <ul id="cart">
+        <ul id="cart">
                
-            </ul>
-        </div>
+        </ul>
     </div>
     <div id="content">
         <?php 
             include "./data.php";
             foreach($products as $i){
-                echo'<div class="produit"> 
+                echo'<div class="produit" id="'.$i["name"].'"> 
                         <img src="'.$i["image"].'">
                         <h2>'.$i["name"].' | '.$i["price"].' dh </h2> 
                         <img src="imgs/plus.png" id="'.$i["id"].'" class="icona">
