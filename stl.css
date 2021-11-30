@@ -85,6 +85,16 @@ li:hover{
     color: white;
 }
 
+#purchase{
+    padding: 10px;
+    background-color: indigo;
+    color: white;
+    font-size: 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    justify-self: center;
+}
+
 footer{
     grid-column: 1/3;
     grid-row: 3;

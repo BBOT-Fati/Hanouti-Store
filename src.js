@@ -20,6 +20,7 @@ let total=document.querySelector("#total");
 let search=document.querySelector("input");
 let btna=document.querySelectorAll(".icona");
 let divs=document.querySelectorAll(".produit");
+let btnp=document.querySelector("#purchase");
 
 search.addEventListener("input",searchfun);
 btna.forEach(e => {
@@ -86,10 +87,25 @@ function searchfun(e){
     let input=e.target.value;
     divs.forEach(e=>{
         if(e.getAttribute("id").toLowerCase().indexOf(input)>-1){
-            e.style.display="";}
-            else{
-                e.style.display="none";
-            }
+            e.style.display="";
         }
-    )
+        else{
+            e.style.display="none";
+        }
+    })
+}
+
+btnp.addEventListener("click",purchase);
+
+function purchase() {
+    let i=1;
+    let commande="";
+    Array.from(cart.children).forEach(e=>{
+        console.log(e.innerText);
+        commande +=i+" - "+e.textContent+"\n";
+        i++;
+    })
+    commande +="TOTAL : "+total.innerHTML+" dh";
+    let r=confirm("You're about to purchase :\n"+commande);
+    if(r==true){alert("Thank you for chosing our store !\n Happy consumption :)");}
 }

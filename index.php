@@ -14,13 +14,14 @@
     <div id="side">
         <input type="text">
         <div id="txt">
-            <p>total :</p>
-            <p id="total">0</p>
-            <p> MAD</p>
+            <p>total : <span id="total">0</span> dh </p>
         </div>
-        <ul id="cart">
-               
-        </ul>
+        <div>
+            <ul id="cart">
+                
+            </ul>
+        </div>
+        <button id="purchase">Purchase</button>
     </div>
     <div id="content">
         <?php 
