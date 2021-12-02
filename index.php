@@ -31,6 +31,7 @@
                         <img src="'.$i["image"].'">
                         <h2>'.$i["name"].' | '.$i["price"].' dh </h2> 
                         <img src="imgs/plus.png" id="'.$i["id"].'" class="icona">
+                        <button>more details</button>
                     </div>';
             }
             ?> <script>

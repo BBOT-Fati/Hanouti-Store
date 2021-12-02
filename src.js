@@ -16,16 +16,22 @@ Completer le code de "addProd" pour ajouter des element au panier et modifier le
 */
 
 let cart =document.querySelector("#cart");
+let content=document.querySelector("#content");
 let total=document.querySelector("#total");
 let search=document.querySelector("input");
 let btna=document.querySelectorAll(".icona");
 let divs=document.querySelectorAll(".produit");
+let details=document.querySelectorAll("button");
 let btnp=document.querySelector("#purchase");
 
 search.addEventListener("input",searchfun);
 btna.forEach(e => {
     e.addEventListener("click",addProd); 
 });
+
+details.forEach(e=>{
+    e.addEventListener("click",prodDetails);
+})
 
 function addProd(e){
     let btn=e.target;
@@ -63,6 +69,30 @@ function addProd(e){
     item.appendChild(button);
             
     cart.appendChild(item);
+}
+function prodDetails(e) {
+    let div=e.target.parentElement;
+    let btn=e.target.previousElementSibling;
+    e.target.style.display="none";
+    let id=btn.getAttribute("id");
+    let a=data.find((i)=>i.id ==id);
+    div.querySelector("h2").style.display="none";
+    let desc=document.createElement("div");
+    let p=document.createElement("p");
+    p.innerText="Product id :"+a.id+"\n Product name :"+a.name+"\n Product price :"+a.price+" dh\n";
+    desc.appendChild(p);
+    let b=document.createElement("button");
+    b.innerHTML="less details";
+    b.addEventListener("click",removeDetails);
+    desc.appendChild(b);
+    div.appendChild(desc);
+}
+function removeDetails(e) {
+    let cont=e.target.parentElement.parentElement;
+    let div=e.target.parentElement;
+    div.remove();
+    cont.querySelector("h2").style.display="";
+    cont.querySelector("button").style.display="";
 }
 
 function delProd(e){
